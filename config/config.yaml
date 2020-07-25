@@ -1,0 +1,11 @@
+# モデルに関するパラメータ
+model_name: 'RandomForestClassifier'
+params:
+  max_depth: 30
+  random_state: 7
+# 実験時に使用するパラメータ
+training:
+  batch_size: 32
+  learning_rate: 0.01
+  epoch: 30
+  patience: 3
