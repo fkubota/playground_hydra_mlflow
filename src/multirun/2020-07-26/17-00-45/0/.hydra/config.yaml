@@ -1,0 +1,9 @@
+cv:
+  cv_name: k-fold
+  params:
+    n_fold: 5
+    random_state: 42
+model:
+  model_name: LogisticRegression
+  params:
+    C: 0.1

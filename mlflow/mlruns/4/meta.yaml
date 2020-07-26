@@ -1,4 +1,0 @@
-artifact_location: /home/fkubota/Git/playground_hydra_mlflow/src/../mlflow/mlruns/4
-experiment_id: '4'
-lifecycle_stage: active
-name: hello

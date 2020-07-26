@@ -1,4 +1,4 @@
-artifact_location: ../mlflow/mlruns/1
+artifact_location: /home/fkubota/Git/playground_hydra_mlflow/mlflow/mlruns/1
 experiment_id: '1'
 lifecycle_stage: active
-name: test_mlflow_handler
+name: iris

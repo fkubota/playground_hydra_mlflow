@@ -3,8 +3,9 @@ import pathlib
 import hydra
 from omegaconf import DictConfig
 from util.load_datasets import load_datasets
-from runner import Runner
 import mlflow
+from runner import Runner
+from util.mlflow_handler import log_params_from_omegaconf_dict
 
 
 EXPERIMENT_NAME = 'iris'
@@ -27,12 +28,18 @@ def main(cfg: DictConfig) -> None:
     mlflow.set_experiment(EXPERIMENT_NAME)
     mlflow.log_param('git_hash', hash_)
 
+    print(mlflow.active_run().info.run_id)
+
     # load datasets
     X_tr, X_te, y_tr, y_te = load_datasets()
+
+    # save params
+    log_params_from_omegaconf_dict(EXPERIMENT_NAME, cfg)
 
     # run
     runner = Runner(EXPERIMENT_NAME, X_tr, X_te, y_tr, y_te, cfg)
     runner.run()
+    mlflow.end_run()
 
 
 if __name__ == "__main__":

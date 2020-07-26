@@ -1,0 +1,18 @@
+[2020-07-26 16:29:39,662][root][WARNING] - Malformed experiment 'mlruns'. Detailed error Yaml file '/home/fkubota/Git/playground_hydra_mlflow/mlflow/mlruns/mlruns/meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "/home/fkubota/venv/ml/lib/python3.6/site-packages/mlflow/store/tracking/file_store.py", line 197, in list_experiments
+    experiment = self._get_experiment(exp_id, view_type)
+  File "/home/fkubota/venv/ml/lib/python3.6/site-packages/mlflow/store/tracking/file_store.py", line 260, in _get_experiment
+    meta = read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "/home/fkubota/venv/ml/lib/python3.6/site-packages/mlflow/utils/file_utils.py", line 167, in read_yaml
+    raise MissingConfigException("Yaml file '%s' does not exist." % file_path)
+mlflow.exceptions.MissingConfigException: Yaml file '/home/fkubota/Git/playground_hydra_mlflow/mlflow/mlruns/mlruns/meta.yaml' does not exist.
+[2020-07-26 16:29:39,670][root][WARNING] - Malformed experiment 'mlruns'. Detailed error Yaml file '/home/fkubota/Git/playground_hydra_mlflow/mlflow/mlruns/mlruns/meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "/home/fkubota/venv/ml/lib/python3.6/site-packages/mlflow/store/tracking/file_store.py", line 197, in list_experiments
+    experiment = self._get_experiment(exp_id, view_type)
+  File "/home/fkubota/venv/ml/lib/python3.6/site-packages/mlflow/store/tracking/file_store.py", line 260, in _get_experiment
+    meta = read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "/home/fkubota/venv/ml/lib/python3.6/site-packages/mlflow/utils/file_utils.py", line 167, in read_yaml
+    raise MissingConfigException("Yaml file '%s' does not exist." % file_path)
+mlflow.exceptions.MissingConfigException: Yaml file '/home/fkubota/Git/playground_hydra_mlflow/mlflow/mlruns/mlruns/meta.yaml' does not exist.

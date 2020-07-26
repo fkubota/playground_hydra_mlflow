@@ -1,0 +1,10 @@
+cv:
+  cv_name: k-fold
+  params:
+    n_fold: 5
+    random_state: 42
+model:
+  model_name: RandomForestClassifier
+  params:
+    max_depth: 10
+    random_state: 2

@@ -1,0 +1,15 @@
+artifact_uri: /home/fkubota/Git/playground_hydra_mlflow/mlflow/mlruns/1/89f5d8f5f31041daa9af744d7ea37dfd/artifacts
+end_time: 1595750220013
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: 89f5d8f5f31041daa9af744d7ea37dfd
+run_uuid: 89f5d8f5f31041daa9af744d7ea37dfd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1595750219999
+status: 3
+tags: []
+user_id: fkubota

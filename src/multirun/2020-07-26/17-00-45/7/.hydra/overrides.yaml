@@ -1,0 +1,2 @@
+- model=logistic_regression
+- model.params.C=3

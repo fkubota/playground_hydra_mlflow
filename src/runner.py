@@ -24,7 +24,6 @@ class Runner:
 
     def init_model(self):
         name = self.cfg.model.model_name
-        print(name)
         params = self.cfg.model.params
         if name == 'RandomForestClassifier':
             model = RandomForestClassifier(**params)

@@ -1,0 +1,2 @@
+- model.params.max_depth=10
+- model.params.random_state=4
