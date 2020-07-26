@@ -6,24 +6,16 @@ import mlflow
 
 
 # mlflow.set_tracking_uri('./aaa/mlruns')
+EXPERIMENT_NAME = 'iris'
 
 
 @hydra.main(config_path='../config/config.yaml')
 def main(cfg: DictConfig) -> None:
-    client = mlflow.tracking.MlflowClient()
-    EXPERIMENT_NAME = 'iris'
-    try:
-        experiment_id = client.create_experiment(EXPERIMENT_NAME)
-    except:
-        experiment_id = client.get_experiment_by_name(EXPERIMENT_NAME).experiment_id
-    run_id = client.create_run(experiment_id).info.run_id
-    print(cfg.pretty())
+    cwd = hydra.utils.get_original_cwd()
+    mlflow.set_tracking_uri(cwd + '/../mlflow')
+    mlflow.log_param('model_name', cfg.model_name)  # LigtGBMのパラメータを記録
     X_tr, X_te, y_tr, y_te = load_datasets()
-    runner = Runner(client, run_id, X_tr, X_te, y_tr, y_te, cfg)
-    # runner = Runner(EXPERIMENT_NAME, X_tr, X_te, y_tr, y_te, cfg)
-    runner.run()
-    client.log_param(run_id, 'model_name', cfg.model_name)  # LigtGBMのパラメータを記録
-    # mlflow.log_param('model_name', cfg.model_name)  # LigtGBMのパラメータを記録
+    runner = Runner(EXPERIMENT_NAME, X_tr, X_te, y_tr, y_te, cfg)
 
 
 if __name__ == "__main__":

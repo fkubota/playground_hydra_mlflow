@@ -3,17 +3,17 @@ from util.load_datasets import load_datasets
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
+import mlflow
 
 
 class Runner:
-    def __init__(self, client, run_id, X_tr, X_te, y_tr, y_te, cfg):
+    def __init__(self, exp_name, X_tr, X_te, y_tr, y_te, cfg):
         self.cfg = cfg
         self.X_tr = X_tr
         self.X_te = X_te
         self.y_tr = y_tr
         self.y_te = y_te
-        self.client = client
-        self.run_id = run_id
+        self.exp_name = exp_name
 
         # method
         # mlflow.set_experiment(self.exp_name)
@@ -39,8 +39,8 @@ class Runner:
         score_tr = accuracy_score(X_tr_pred, self.y_tr)
         score_te = accuracy_score(X_te_pred, self.y_te)
 
-        self.client.log_metric(self.run_id, 'f1_score_train', score_tr)
-        self.client.log_metric(self.run_id, 'f1_score_test', score_te)
+        mlflow.log_metric('f1_score_train', score_tr)
+        mlflow.log_metric('f1_score_test', score_te)
 
 
 def main():
