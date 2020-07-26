@@ -54,7 +54,7 @@ def main():
     X_tr, X_te, y_tr, y_te = load_datasets()
     runner = Runner(exp_name, X_tr, X_te, y_tr, y_te, config)
     runner.run()
-    mlflow.log_param('foo', 'foo_run')
+    mlflow.log_param('foo', 'foo_runner')
 
 
 if __name__ == "__main__":
