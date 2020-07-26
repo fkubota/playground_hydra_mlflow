@@ -1,0 +1,15 @@
+artifact_uri: ../mlflow/mlruns/0/cb23ab5e55c1466595d275038bfe70a8/artifacts
+end_time: 1595735945068
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: cb23ab5e55c1466595d275038bfe70a8
+run_uuid: cb23ab5e55c1466595d275038bfe70a8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1595735945041
+status: 3
+tags: []
+user_id: fkubota

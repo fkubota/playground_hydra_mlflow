@@ -16,7 +16,7 @@ class Runner:
         self.exp_name = exp_name
 
         # method
-        # mlflow.set_experiment(self.exp_name)
+        mlflow.set_experiment(self.exp_name)
 
     def run(self):
         model = self.init_model()
@@ -44,7 +44,8 @@ class Runner:
 
 
 def main():
-    exp_name = 'test'
+    mlflow.set_tracking_uri('../mlflow/mlruns')
+    exp_name = 'test_run'
     config = DictConfig({
             'model_name': 'RandomForestClassifier',
             'params': {'max_depth': 20}
@@ -53,6 +54,7 @@ def main():
     X_tr, X_te, y_tr, y_te = load_datasets()
     runner = Runner(exp_name, X_tr, X_te, y_tr, y_te, config)
     runner.run()
+    mlflow.log_param('foo', 'foo_run')
 
 
 if __name__ == "__main__":
