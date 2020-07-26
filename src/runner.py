@@ -23,8 +23,9 @@ class Runner:
         self.train(model)
 
     def init_model(self):
-        name = self.cfg.model_name
-        params = self.cfg.params
+        name = self.cfg.model.model_name
+        print(name)
+        params = self.cfg.model.params
         if name == 'RandomForestClassifier':
             model = RandomForestClassifier(**params)
         elif name == 'LogisticRegression':

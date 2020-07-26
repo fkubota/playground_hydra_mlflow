@@ -12,6 +12,8 @@ EXPERIMENT_NAME = 'iris'
 
 @hydra.main(config_path='../config/config.yaml')
 def main(cfg: DictConfig) -> None:
+    print(cfg.pretty())
+
     # hash値の取得
     cmd = "git rev-parse --short HEAD"
     hash_ = subprocess.check_output(cmd.split()).strip().decode('utf-8')
@@ -31,7 +33,6 @@ def main(cfg: DictConfig) -> None:
     # run
     runner = Runner(EXPERIMENT_NAME, X_tr, X_te, y_tr, y_te, cfg)
     runner.run()
-    print(cfg.pretty())
 
 
 if __name__ == "__main__":

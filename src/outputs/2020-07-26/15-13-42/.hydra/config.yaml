@@ -1,0 +1,7 @@
+cv:
+  name_fold: k-fold
+  params:
+    n_fold: 5
+model:
+  C: 1
+  seed: 42

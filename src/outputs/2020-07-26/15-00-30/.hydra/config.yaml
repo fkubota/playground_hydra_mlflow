@@ -1,0 +1,4 @@
+model_name: RandomForestClassifier
+params:
+  max_depth: 30
+  random_state: 7

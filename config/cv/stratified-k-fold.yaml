@@ -1,0 +1,5 @@
+cv:
+  cv_name: 'k-fold'
+  params_:
+    n_fold: 5
+    random_state: 42

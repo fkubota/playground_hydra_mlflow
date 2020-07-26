@@ -1,0 +1,4 @@
+model:
+  model_name: 'LogisticRegression'
+  params:
+    C: 1
